@@ -1,28 +1,32 @@
-import React, { useRef, useState } from 'react';
-import { FileConverter } from '../services/FileConverter';
+import React, { useState } from 'react';
+import { FileConverter } from './FileConverter';
 
-function FileUpload() {
-	const file = useRef(null)
-	let [uploadFile, setFile] = useState(null);
+const FileUpload = () => {
+	const [fileUpload, setFileUpload] = useState(null);
+	const handleFile = (e) => {
+		let content = e.target.result;
+		setFileUpload(content);
+	}
 
-	const onUpload = e => {
-		e.preventDefault()
-		
-		setFile(uploadFile = file.current.files[0])
-		console.log(uploadFile)
+	const handleChangeFile = (file) => {
+		let fileData = new FileReader();
+		fileData.onloadend = handleFile;
+		if (file != null) {
+			fileData.readAsText(file);
+		}
 	}
 
 	return (
 		<div>
 			<div>
-				<form onSubmit={onUpload}>
-					<input type="file" ref={file} />
-					<button type='submit'>Convert file</button>
-				</form>
+				<input type="file" accept=".json" onChange={e =>
+					handleChangeFile(e.target.files[0])} />
 			</div>
-			<FileConverter upload={uploadFile}/>
+			<div>
+				<FileConverter upload={fileUpload} />
+			</div>
 		</div>
-	);
+	)
 }
 
 export { FileUpload };

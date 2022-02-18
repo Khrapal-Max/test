@@ -8,7 +8,7 @@ import { TaskFour } from './pages/task-four';
 
 import { Layout } from './components/Layout'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>

@@ -10,7 +10,6 @@ const TaskOne = () => {
 
     return (
         <div>
-            <h1>Select file for upload</h1>
             <FileUpload />
         </div>
     )
