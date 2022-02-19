@@ -1,7 +1,14 @@
 import React from 'react';
+import { FileSaver } from './FileSaver';
+import ConvertationService from './../services/ConvertationService'
 
 const FileConverter = (props) => {
-    let res = JSON.parse(props.upload);    
+    let res = JSON.parse(props.upload);
+    let { result } = {};
+
+    const f = (obj) => {
+        result = ConvertationService.Convert(obj)
+    }
 
     if (props.upload == null) {
         return (
@@ -15,7 +22,8 @@ const FileConverter = (props) => {
             <div>
                 <h1>Data in file:</h1>
                 <p>{props.upload.toString()}</p>
-                <p>{console.log(res)}</p>
+                {f(res)}
+                <FileSaver onsave={result}/>
             </div>
         )
     }

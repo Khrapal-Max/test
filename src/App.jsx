@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Description } from './pages/description';
-import { TaskOne } from './pages/task-one';
-import { TaskTwo } from './pages/task-two';
-import { TaskTree } from './pages/task-tree';
-import { TaskFour } from './pages/task-four';
+import { Description } from './views/description';
+import { TaskOne } from './views/task-one';
+import { TaskTwo } from './views/task-two';
+import { TaskTree } from './views/task-tree';
+import { TaskFour } from './views/task-four';
 
 import { Layout } from './components/Layout'
 
