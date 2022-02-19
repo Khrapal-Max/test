@@ -22,8 +22,14 @@ const FileConverter = (props) => {
             <div>
                 <h1>Data in file:</h1>
                 <p>{props.upload.toString()}</p>
-                {f(res)}
-                <FileSaver onsave={result}/>
+                {
+                    f(res)
+                }
+                {
+                    result === null ?
+                        <h1>File is not correct format. <br />Try again.</h1>
+                        : <FileSaver onsave={result} />
+                }
             </div>
         )
     }

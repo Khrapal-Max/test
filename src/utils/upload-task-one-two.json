@@ -1,6 +1,6 @@
 {
     "distance": {
-        "unit": "ft",
+        "unit": "cm",
         "value": 1
     },
     "convert_to": "in"
