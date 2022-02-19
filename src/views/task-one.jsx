@@ -1,9 +1,12 @@
 import { FileUpload } from '../components/FileUpload'
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const TaskOne = () => {
     return (
         <div>
-            <FileUpload />
+            <ErrorBoundary>
+                <FileUpload />
+            </ErrorBoundary>
         </div>
     )
 }
