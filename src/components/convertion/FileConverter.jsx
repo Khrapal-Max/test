@@ -1,6 +1,6 @@
 import React from 'react';
-import { FileSaver } from './FileSaver';
-import ConvertationService from './../services/ConvertationService'
+import { FileSaver } from '../FileSaver';
+import ConvertationService from '../../services/ConvertationService'
 
 const FileConverter = (props) => {
     let res = JSON.parse(props.upload);

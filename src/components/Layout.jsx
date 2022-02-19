@@ -6,10 +6,9 @@ const Layout = () => {
         <>
             <header className="App-header">
                 <NavLink to="/" className={setActive}>Description</NavLink>
-                <NavLink to="/one" className={setActive}>Task one</NavLink>
-                <NavLink to="/two" className={setActive}>Task two</NavLink>
-                <NavLink to="/tree" className={setActive}>Task tree</NavLink>
-                <NavLink to="/four" className={setActive}>Task four</NavLink>
+                <NavLink to="/convert" className={setActive}>Convert dictance</NavLink>
+                <NavLink to="/filter" className={setActive}>Filter</NavLink>
+                <NavLink to="/dialog" className={setActive}>Dialog</NavLink>
             </header>
             <main>
                 <Outlet />
